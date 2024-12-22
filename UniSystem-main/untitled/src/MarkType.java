@@ -1,0 +1,4 @@
+public enum MarkType
+{
+	FIRST, SECOND, FINAL,EXAM, TEST, ASSIGNMENT, PROJECT;
+}
