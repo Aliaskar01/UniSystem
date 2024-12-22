@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" type="text/css" href="exmpl.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<header class="dashboard-header">
+    <div class="logo">
+        <img src="img/header/Vector.svg" alt="Logo">
+        Dashboard
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder= "Search here">
+    </div>
+    <div class="user-info">
+        <div class="notifications">
+            <div class="icon">
+                <img src="img/header/bell.svg" alt="Messages">
+                <span class="badge">8</span>
+            </div>
+            <div class="icon">
+                <img src="img/header/mess.svg" alt="Messages">
+                <span class="badge">8</span>
+            </div>
+            <div class="icon">
+                <img src="img/header/mess2.svg" alt="Notifications">
+                <span class="badge">4</span>
+            </div>
+        </div>
+        <div class="avatar">
+            <div class="avik">
+                <div class="name">John Doe</div>
+                <div class="role">Student</div>
+            </div>
+            <img src="img/prof/Profile Picture.svg" alt="John Doe">
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src=".svg"alt="Logo">
+        </div>
+        <a href="#" class="menu-item">
+            <i class="icon-dashboard"></i><img src="img/sidebar/home.svg" alt="Dashboard"> Dashboard
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-booking"></i><img src="img/sidebar/booking.svg" alt="Booking"> Schedule
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-traveler"></i><img src="img/sidebar/traveling.svg" alt="Traveler"> Teachers
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-tour"></i><img src="img/sidebar/tour.svg" alt="Tour"> Map
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-reviews"></i><img src="img/sidebar/reviews.svg" alt="Reviews"> Reviews
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-analytics"></i><img src="img/sidebar/analytics.svg" alt="Analytics"> Analytics
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-calendar"></i><img src="img/sidebar/calendar.svg" alt="Calendar"> Calendar
+        </a>
+        <a href="#" class="menu-item">
+            <i class="icon-chat"></i><img src="img/sidebar/chat.svg" alt="Chat"> Chat
+        </a>
+        <div class="stats">
+            <h4>Course Progress</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width: 50%;"></div>
+                <p>50%</p>
+            </div>
+            <h4>Other Students</h4>
+            <div class="progress">
+                <div class="progress-bar revenue" style="width: 80%;"></div>
+                <p>80%</p>
+            </div>
+        </div>
+        <div class="help">
+            <img src="img/sidebar/Illustration.svg" alt="Help">
+            <p class="title">Need Help? </p>
+            <p>Having trouble in Courses. Contact us for more questions.(Deans)</p>
+            <a href="#">Contact Us 
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="welcome-card">
+            <div class="welcome-text">
+                <div class="welcome-title">
+                    <h2>Hello, John Doe</h2>
+                    <p>Welcome back, your dashboard is ready!</p>
+                </div>
+                <a href="#" class="get-started-btn">Get Started <img src="img/container/arrow_right.svg" alt="Get Started"></a>
+            </div>
+            <div class="welcome-image">
+                <img src="img/container/Illustration.svg" alt="Welcome Image">
+            </div>
+        </div>
+
+        <div class="top-selling-card">
+            <div class="top-selling-title">
+                <h4>Top 1 Teacher</h4>
+                <div class="dropdown">
+                    <button>Weekly</button>
+                    <div class="dropdown-content">
+                        <a href="#">Yesterday</a>
+                        <a href="#">Today</a>
+                        <a href="#">Monthly</a>
+                    </div>
+                </div>
+            </div>
+            <div class="top-selling-tour">
+                <img src="path_to_tour_image" alt="Teacher img">
+                <div class="top-selling-info">
+                    <h5>Phang Nga Bay</h5>
+                    <div class="top-selling-rating">
+                        <i class="fa-star"><img src="img/container/star-fill.svg"></i>
+                        <i class="fa-star"><img src="img/container/star-fill.svg"></i>
+                        <i class="fa-star"><img src="img/container/star-fill.svg"></i>
+                        <i class="fa-star"><img src="img/container/star-fill.svg"></i>
+                        <i class="fa-star"><img src="img/container/star-fill.svg"></i>
+                    </div>
+                    <span>600 rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-content">
+                <h3>Total Courses</h3>
+                <div class="value">22</div>
+                <div class="change">0.43% <img src="img/container_row2/arrow_up_b.svg"> (30 days)</div>
+            </div>
+            <img src="img/container_row2/Illustration1.svg" alt="Booking Icon">
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Completed Courses</h3>
+                <div class="value">10</div>
+                <div class="change">0.43% <img src="img/container_row2/arrow_up_b.svg"> (30 days)</div>
+            </div>
+            <img src="img/container_row2/Illustration2.svg" alt="Completed Booking Icon">
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Other Students</h3>
+                <div class="value">19.5</div>
+                <div class="change negative">0.43% <img src="img/container_row2/arrow_down_r.svg"> (30 days)</div>
+            </div>
+            <img src="img/container_row2/Illustration3.svg" alt="Revenue Icon">
+        </div>
+    </div>
+
+    <div class="cards_row3">
+        <div class="card_row3">
+            <h4>Statistics</h4>
+            <p>Monthly attendance</p>
+            <canvas id="bookingChart" width="200" height="200"></canvas>
+            <div class="total">
+                <p>Total attendance</p>
+                <h4>90%</h4>
+            </div>
+        </div>
+
+        <div class="card_row3">
+            <h4>Statistics</h4>
+            <p>Semestr attendance</p>
+            <canvas id="revenueChart" width="200" height="200"></canvas>
+            <div class="total">
+                <p>Total attendance</p>
+                <h4>80%</h4>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h4>Statistics</h4>
+            <p>GPA</p>
+            <canvas id="weeklyRevenueChart"></canvas>
+        </div>
+    </div>
+
+    <div class="recent-tour-booking">
+        <h3>Recent Tour Booking</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lessons</th>
+                    <th>Teacher Name</th>
+                    <th>Date</th>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#00001</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Phi Phi Sunrise Tour</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg"> Jame Doe</td>
+                    <td><span class="status pending">  Pending</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00002</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Phang Nga Bay & Beyond</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status canceled">Canceled</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00003</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Stunning Erawan Waterfall Trek in Kanchanaburi</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status paid">Сompleted</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00004</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Phi Phi Islands Adventure Day Trip with Seaview Lunch</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status paid">Сompleted</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00005</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Ayutthaya Full Day Tour</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status paid">Сompleted</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00006</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Phang Nga Bay Canoeing & James Bond Day Trip with Lunch</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00007</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Simba’s Coral Delight</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status canceled">Canceled</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+                <tr>    
+                    <td>#00008</th>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Phang Nga Bay & Beyond</td>
+                    <td>29 Nov 2022, 06:00 PM</td>
+                    <td class="tour-image"><img src="img/container_row4/Picture.svg">Jame Doe</td>
+                    <td><span class="status canceled">Canceled</span></td>
+                    <td><button class="view-details"> <img src="img/container_row4/eye.svg"></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <span>Showing 1 to 5 of 65 entries</span>
+            <div class="pagination-controls">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="active">4</button>
+                <button>5</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popular-tour-booking">
+        <h3>News</h3>
+        <div class="tour-grid">
+            <div class="tour-card">
+                <div class="tour-image"></div>
+                <h4>Phi Phi Sunrise</h4>
+            </div>
+            <div class="tour-card">
+                <div class="tour-image"></div>
+                <h4>Phi Phi Sunrise</h4>
+            </div>
+            <div class="tour-card">
+                <div class="tour-image"></div>
+                <h4>Phi Phi Sunrise</h4>
+            </div>
+            <div class="tour-card">
+                <div class="tour-image"></div>
+                <h4>Phi Phi Sunrise</h4>
+            </div>
+            <!-- Повторите блок для каждого тура -->
+        </div>
+    </div>
+
+
+
+</body>
+
+
+    <footer class="footer">
+        <p>Copyright 2023. All rights reserved.</p>
+    </footer>
+    <script src="exmpl.js"></script>
+</html>
