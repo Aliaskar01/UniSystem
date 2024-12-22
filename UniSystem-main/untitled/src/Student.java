@@ -183,30 +183,38 @@ public class Student extends User{
 
     public void viewTranscript() {
         HashMap<Course, HashMap<String, Double>> transcript = getTranscript();
-        for(Course course:transcript.keySet()) {
+
+        String firstAttestation, secondAttestation, finalExam, total;
+
+        for (Course course : transcript.keySet()) {
             System.out.println("=========");
             System.out.println(course.getCourseNameEntry(Hub.getInstance().getLanguage()));
-            if(Hub.getInstance().getLanguage() == Language.RUS) {
-                System.out.println("Первая Аттестация: "+ transcript.get(course).get("first"));
-                System.out.println("Вторая Аттестация: "+ transcript.get(course).get("second"));
-                System.out.println("Сессия: "+ transcript.get(course).get("final"));
-                System.out.println("Сумма: "+ transcript.get(course).get("total") + " " + gpaScale(transcript.get(course).get("total")));
+
+            if (Hub.getInstance().getLanguage() == Language.RUS) {
+                firstAttestation = "Первая Аттестация: ";
+                secondAttestation = "Вторая Аттестация: ";
+                finalExam = "Сессия: ";
+                total = "Сумма: ";
+            } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+                firstAttestation = "-----";
+                secondAttestation = "-----";
+                finalExam = "-----";
+                total = "-----";
+            } else {
+                firstAttestation = "First Attestation: ";
+                secondAttestation = "Second Attestation: ";
+                finalExam = "Final Exam: ";
+                total = "Total: ";
             }
-            else if(Hub.getInstance().getLanguage() == Language.KAZ) {
-                System.out.println("-----"+ transcript.get(course).get("first"));
-                System.out.println("-----"+ transcript.get(course).get("second"));
-                System.out.println("-----"+ transcript.get(course).get("final"));
-                System.out.println("-----"+ transcript.get(course).get("total") + " " + gpaScale(transcript.get(course).get("total")));
-            }
-            else {
-                System.out.println("First Attestation: "+ transcript.get(course).get("first"));
-                System.out.println("Second Attestation: "+ transcript.get(course).get("second"));
-                System.out.println("Final Exam: "+ transcript.get(course).get("final"));
-                System.out.println("Total: "+ transcript.get(course).get("total") + " " + gpaScale(transcript.get(course).get("total")));
-            }
+
+            System.out.println(firstAttestation + transcript.get(course).get("first"));
+            System.out.println(secondAttestation + transcript.get(course).get("second"));
+            System.out.println(finalExam + transcript.get(course).get("final"));
+            System.out.println(total + transcript.get(course).get("total") + " " + gpaScale(transcript.get(course).get("total")));
             System.out.println("=========");
         }
     }
+
 
     private String gpaScale(double score){
         if (score >= 95 && score <= 100) {
@@ -236,21 +244,51 @@ public class Student extends User{
     }
 
     public void viewMarks() {
-        for(Course course:marks.keySet()) {
+        for (Course course : marks.keySet()) {
             System.out.println(course.getCourseNameEntry(Hub.getInstance().getLanguage()));
-            for(Mark mark:marks.get(course)) {
-                System.out.println(mark.getMarkTypeAttestation() + " " + mark.getValue() + " " + mark.getMarkType());
+
+            String markTypeLabel, markValueLabel;
+
+            if (Hub.getInstance().getLanguage() == Language.RUS) {
+                markTypeLabel = "Тип аттестации: ";
+                markValueLabel = "Оценка: ";
+            } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+                markTypeLabel = "Аттестация түрі: ";
+                markValueLabel = "Бағасы: ";
+            } else {
+                markTypeLabel = "Mark Type: ";
+                markValueLabel = "Mark: ";
+            }
+
+            for (Mark mark : marks.get(course)) {
+                System.out.println(markTypeLabel + mark.getMarkTypeAttestation() + ", " + markValueLabel + mark.getValue() + " (" + mark.getMarkType() + ")");
             }
         }
     }
+
 
     public void receiveMark(Course course, Mark mark) {
         marks.get(course).add(mark);
     }
 
     public void rateTeacher(Teacher teacher, Integer rating) {
+        if (rating < 1) {
+            rating = 1;
+        } else if (rating > 10) {
+            rating = 10;
+        }
+
+        if (Hub.getInstance().getLanguage() == Language.RUS) {
+            System.out.println("Вы оценили преподавателя: " + rating + " баллов.");
+        } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+            System.out.println("Сіз оқытушыны " + rating + " баллмен бағаладыңыз.");
+        } else {
+            System.out.println("You rated the teacher: " + rating + " points.");
+        }
+
         teacher.addRating(rating);
     }
+
     public void viewTeacherInfo(Course course) {
         for(Teacher teacher : course.getTeachers()) {
             System.out.println(teacher);
