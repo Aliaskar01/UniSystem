@@ -294,14 +294,51 @@ public class Student extends User{
             System.out.println(teacher);
         }
     }
-    public void leaveOrganziation(StudentOrganization organization) {
-        organization.removeMember(this);
-    }
+
     public void joinOrganization(StudentOrganization organization) {
         organization.addMember(this);
+
+        if (Hub.getInstance().getLanguage() == Language.RUS) {
+            System.out.println("Вы присоединились к организации: " + organization.getName());
+        } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+            System.out.println("Сіз ұйымға қосылдыңыз: " + organization.getName());
+        } else {
+            System.out.println("You joined the organization: " + organization.getName());
+        }
     }
+
+    public void leaveOrganization(StudentOrganization organization) {
+        organization.removeMember(this);
+
+        if (Hub.getInstance().getLanguage() == Language.RUS) {
+            System.out.println("Вы покинули организацию: " + organization.getName());
+        } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+            System.out.println("Сіз ұйымнан шықтыңыз: " + organization.getName());
+        } else {
+            System.out.println("You left the organization: " + organization.getName());
+        }
+    }
+
     public void becomeHeadOfOrganization(StudentOrganization organization) {
-        organization.setHead(this);
+        if (organization.canBeHead(this)) {
+            organization.setHead(this);
+
+            if (Hub.getInstance().getLanguage() == Language.RUS) {
+                System.out.println("Вы стали главой организации: " + organization.getName());
+            } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+                System.out.println("Сіз ұйымның басшысы болдыңыз: " + organization.getName());
+            } else {
+                System.out.println("You became the head of the organization: " + organization.getName());
+            }
+        } else {
+            if (Hub.getInstance().getLanguage() == Language.RUS) {
+                System.out.println("Вы не можете стать главой этой организации.");
+            } else if (Hub.getInstance().getLanguage() == Language.KAZ) {
+                System.out.println("Сіз осы ұйымның басшысы бола алмайсыз.");
+            } else {
+                System.out.println("You cannot become the head of this organization.");
+            }
+        }
     }
 
     public void registerCourse(Course course) {
